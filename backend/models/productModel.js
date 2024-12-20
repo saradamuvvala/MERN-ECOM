@@ -36,21 +36,21 @@ let productSchema = new mongoose.Schema({
     required: [true, 'please provide stock']
   },
   
-  reviews: {
+  reviews: [{
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      required: false
+      required: true
     },
     rating: {
       type: Number,
-      required: false
+      required: true
     },
     comment: {
       type: String,
-      required: false
+      required: true
     }
-  },
+  }],
   noOfReviews: {
     type: Number,
     default: 0
@@ -63,7 +63,7 @@ let productSchema = new mongoose.Schema({
     type: String,
     required: [true, 'please provide category'],
     enum: {
-      values: ['electronics', 'cloths', 'food'],
+      values: ['electronics', 'clothes', 'food'],
       message: 'please select correct category'
     }
   },
