@@ -6,8 +6,13 @@ let userRoutes = require('./routes/userRoutes.js')
 let orderRoutes = require('./routes/orderRoutes.js')
 const errorMiddleware = require('./middlewares/errorMiddleware.js')
 const cookieParser = require('cookie-parser')
+//const cors = require('cors');
 
 let app = express()
+
+// app.use(cors({
+//   origin: 'http://localhost:3000' 
+// }));
 app.use(express.json())
 app.use(cookieParser())
 
